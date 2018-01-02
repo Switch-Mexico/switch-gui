@@ -1,10 +1,12 @@
+// MainContent.jsx
 import React from 'react';
+import Capacity from './Capacity';
 
 export default class MainContent extends React.Component {
 	render() {
 		return(
 			<div className="MainContent">
-				<h1>MainContent</h1>
+				<Capacity />
 			</div>
 		);
 	}

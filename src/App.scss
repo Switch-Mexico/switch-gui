@@ -2,9 +2,24 @@
 
 img{
 	max-width: 100%;
+	display: block;
+}
+h1, h2, h3, h4, h5, h6{
+	color: $darkgray;
+}
+h1{
+	font-weight: 300;
+}
+p{
+	color: $text;
+}
+li{
+	color: $text;
+}
+.fw300{
+	font-weight: 300;
 }
 .App {
-	text-align: center;
 	width: 100%;
 }
 .Sidebar{
@@ -17,29 +32,30 @@ img{
 	background: $bg;
 	*{color: white;}
 	overflow: hidden;
-	padding: 10% 2%;
+	padding: 10% 0;
 	a.logo{
-		width: 100%;
+	width: 100%;
 		display: block;
 		img{
-			// width: 90%;
-			width: 100%;
+			width: 90%;
+			margin: 0 auto;
+			// width: 100%;
 		}
 	}
 	.main-nav{
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		text-align: left;
 		li{
 			border-bottom: 1px solid #0072CC;
 			a{
 				display: block;
-				padding: 15px 10px;
-				@include transition(all, 300ms);
+				padding: 15px 20px;
+				// @include transition(all, 300ms);
 				&:hover{
 					color: darken(white, 20%);
 					background: darken($bg, 10%); 
+					text-decoration: none;
 				}
 			}
 		}
@@ -52,4 +68,15 @@ img{
 	height: 100vh;
 	// display: inline-block;
 	background: $mainbg;
+	padding: 40px 30px 20px;
+}
+h1.maintitle{
+	&:after{
+		width: 180px;
+		display: inline-block;
+		content: ' ';
+		height: 15px;
+		margin-left: 20px;
+		border-top: 1px solid $lightgray;
+	}
 }

@@ -3,12 +3,15 @@
 $bg: #008cff;
 $mainbg: #f5f7fa;
 $darkgrey: #53575a;
+$darkgray: $darkgrey;
+$lightgray: #d2d2d2;
 $text: #a3a3a3;
+$gray2: #d9dce0;
 
 $colors:(
 	bg: $bg,
 	mainbg: $mainbg,
-	darkgrey: $darkgrey,
+	darkgray: $darkgrey,
 	text: $text
 );
 
