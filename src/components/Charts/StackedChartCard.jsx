@@ -14,7 +14,7 @@ const data = [
 export default class StackedChartCart extends React.Component{
 	render() {
 		return(
-			<div className="card border-0 rounded-0 mt-2">
+			<div className="card border-0 rounded-0">
 				<div className="card-body p-0 pb-2">
 					<h6 className="card-title fwb" style={{padding: '16px 10px 0'}}>Load zone Capacity Distribution</h6>
 					<BarChart width={380} height={200} data={data} margin={{top: 20, right: 5, left: 0, bottom: 5}}>

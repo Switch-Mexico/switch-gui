@@ -22,3 +22,29 @@
 .recharts-cartesian-axis-tick-value {
 	font-size: 12px;
 }
+.largenum{
+
+}
+.card.singlenum{
+	padding: 16px 10px;
+	.card-body{
+		padding: 0;
+	}
+	p{
+		margin: 0;
+		text-align: center;
+	}
+	.card-title{
+		// font-size: 14px;
+		font-weight: 600;
+		color: $text;
+	}
+	p.largenum{
+		font-size: 3rem;
+		font-weight: 300;
+		color: black;
+	}
+	p.units{
+
+	}
+}
