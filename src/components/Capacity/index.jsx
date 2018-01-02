@@ -7,6 +7,7 @@ import Filters from './Filters';
 
 // Charts
 import PieChartCard from '../Charts/PieChartCard';
+import StackedChartCard from '../Charts/StackedChartCard';
 
 import './Capacity.css';
 
@@ -19,15 +20,22 @@ export default class Capacity extends React.Component {
 					<div className="col md-8">
 						<Filters />
 						<div className="card capacitycard">
-							<div className="card-header">Mexico</div>
+							<div className="card-header pt-1 pb-1 pl-3" style={{fontSize: 14}}><strong>Mexico</strong></div>
 							<div className="card-body p-0 h-100">
-								<CapacityMap />
+								{/*CapacityMap />*/}
 							</div>
 						</div>
 					</div>
 					<div className="col-md-4">
 						<h5>Time filter</h5>
-						<PieChartCard />
+						<div className="row">
+							<PieChartCard />
+						</div>
+						<div className="row">
+							<StackedChartCard />
+						</div>
+						<div className="row">
+						</div>
 					</div>
 				</div>
 			</div>

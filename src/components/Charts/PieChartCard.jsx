@@ -21,22 +21,22 @@ export default class PieChartCard extends React.Component {
 			<div className="card PieChartCard border-0 rounded-0" >
 				<div className="card-body">
 
-					<h5 style={{marginBottom: 6}} className="card-title fwb">Balancing Area Title</h5>
+					<h6 style={{marginBottom: 6}} className="card-title fwb">Balancing Area Title</h6>
 					<p style={{fontSize: 12}} className="card-subtitle ">Capacity distribution by type of fuel</p>
-					<PieChart width={300} height={200} onMouseEnter={this.onPieEnter}>
+					<PieChart width={400} height={140} onMouseEnter={this.onPieEnter}>
 						<Pie
 							data={data} 
-							cx={160} 
-							cy={100} 
+							cx={180} 
+							cy={65} 
 							labelLine={false}
 							label={renderCustomizedLabel}
-							outerRadius={80} 
+							outerRadius={60} 
 							fill="#8884d8"
 						>
 							{ data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>) }
 						</Pie>
 					</PieChart>
-					<div className="fuelFilter">
+					<div className="fuelFilter ml-4">
 						<div className="form-check form-check-inline ml-5">
 							<input type="checkbox" name="" id="renewable" className="form-check-input"/>
 							<label htmlFor="renewable" className="form-check-label">Renewable</label>
