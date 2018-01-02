@@ -1,2 +1,23 @@
 // Capacity.scss
 
+.Capacity{
+	// padding-bottom: 7%;
+	height: 100%;
+	.card{
+		height: 100%;
+	}
+}
+.CapacityMap{
+	// width: 100%;
+	// padding-bottom: 110px;
+	// height: 100%;
+	.leaflet-map{
+		// position: relative;
+		// width: 100%;
+		// height: 100%;
+	}
+}
+
+.card-body{
+	overflow:hidden;
+}
