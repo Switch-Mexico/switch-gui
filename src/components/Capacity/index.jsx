@@ -16,13 +16,13 @@ export default class Capacity extends React.Component {
 		return(
 			<div className="Capacity container-fluid p-0">
 				<h1 className="maintitle">Capacity Distribution</h1>
-				<div className="row no-gutters" >
+				<div className="row no-gutters">
 					<div className="col md-8">
 						<Filters />
-						<div className="card capacitycard">
+						<div className="card capacitycard" style={{height: '94%'}}>
 							<div className="card-header pt-1 pb-1 pl-3" style={{fontSize: 14}}><strong>Mexico</strong></div>
 							<div className="card-body p-0 h-100">
-								{/*CapacityMap />*/}
+								<CapacityMap />
 							</div>
 						</div>
 					</div>

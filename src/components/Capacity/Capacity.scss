@@ -1,4 +1,5 @@
 // Capacity.scss
+@import "../../sass/_vars.scss";
 
 .Capacity{
 	// padding-bottom: 7%;
@@ -35,9 +36,9 @@
 		text-align: center;
 	}
 	.card-title{
-		// font-size: 14px;
+		font-size: 14px;
 		font-weight: 600;
-		color: $text;
+		color: $darkgray;
 	}
 	p.largenum{
 		font-size: 3rem;

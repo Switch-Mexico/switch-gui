@@ -3,7 +3,7 @@ import React from 'react';
 export default class CapacityFilters extends React.Component{
 	render() {
 		return(
-			<div className="Filters mb-2">
+			<div className="Filters mb-4">
 				<div className="row">
 					<div className="col-sm-4 fw300">
 						<select name="" className="custom-select" id="">

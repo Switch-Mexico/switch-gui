@@ -26,6 +26,7 @@ export default class PieChartCard extends React.Component {
 					<PieChart width={400} height={140} onMouseEnter={this.onPieEnter}>
 						<Pie
 							data={data} 
+							dataKey="value"
 							cx={180} 
 							cy={65} 
 							labelLine={false}
@@ -33,7 +34,7 @@ export default class PieChartCard extends React.Component {
 							outerRadius={60} 
 							fill="#8884d8"
 						>
-							{ data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>) }
+							{ data.map((entry, index) => <Cell key={`cell${index}`} fill={COLORS[index % COLORS.length]}/>) }
 						</Pie>
 					</PieChart>
 					<div className="fuelFilter ml-4">
