@@ -1,22 +1,55 @@
+@import "sass/_vars.scss";
+
+img{
+	max-width: 100%;
+}
 .App {
 	text-align: center;
+	width: 100%;
 }
-
-.App-logo {
-	height: 80px;
+.Sidebar{
+	width: 17%;
+	// display: inline-block;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	background: $bg;
+	*{color: white;}
+	overflow: hidden;
+	padding: 10% 2%;
+	a.logo{
+		width: 100%;
+		display: block;
+		img{
+			// width: 90%;
+			width: 100%;
+		}
+	}
+	.main-nav{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		text-align: left;
+		li{
+			border-bottom: 1px solid #0072CC;
+			a{
+				display: block;
+				padding: 15px 10px;
+				@include transition(all, 300ms);
+				&:hover{
+					color: darken(white, 20%);
+					background: darken($bg, 10%); 
+				}
+			}
+		}
+	}
 }
-
-.App-header {
-	background-color: #222;
-	height: 150px;
-	padding: 20px;
-	color: white;
-}
-
-.App-title {
-	font-size: 1.5em;
-}
-
-.App-intro {
-	font-size: large;
+.MainContent{
+	overflow: hidden;
+	width: 83%;
+	margin-left: 17%;
+	height: 100vh;
+	// display: inline-block;
+	background: $mainbg;
 }

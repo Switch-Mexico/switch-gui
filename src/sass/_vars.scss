@@ -1,0 +1,41 @@
+// vars.scss
+
+$bg: #008cff;
+$mainbg: #f5f7fa;
+$darkgrey: #53575a;
+$text: #a3a3a3;
+
+$colors:(
+	bg: $bg,
+	mainbg: $mainbg,
+	darkgrey: $darkgrey,
+	text: $text
+);
+
+
+////////////////////
+///    Colors    /// 
+////////////////////
+@each $color in $colors{
+	.#{""+nth($color,1)}{
+		color: #{nth($color,2)};
+	}
+	a.#{""+nth($color,1)}:hover{ 
+		color: darken(nth($color,2),20%);
+	}
+	.bg-#{""+nth($color,1)}{
+		background-color: #{nth($color,2)};
+	}
+	a.bg-#{""+nth($color,1)}, button.bg-#{""+nth($color,1)}{
+		color: white;
+		&:hover{ background-color: darken(nth($color,2),10%); }
+	}
+}
+
+
+@mixin transition($prop, $time, $opt: null, $fn: null) {
+	transition: $prop $time $fn $opt; 
+	-moz-transition: $prop $time $fn $opt; 
+	-webkit-transition: $prop $time $fn $opt; 
+	-o-transition: $prop $time $fn $opt;
+}
