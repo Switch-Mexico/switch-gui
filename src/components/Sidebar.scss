@@ -1,0 +1,58 @@
+// Sidebar.scss
+@import "../sass/_vars";
+
+.Sidebar {
+	width: 17%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	background: $bg;
+	color: white;
+	overflow: hidden;
+	padding: 10% 0;
+	a.logo{
+	width: 100%;
+		display: block;
+		img{
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
+	.main-nav{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li{
+			border-bottom: 1px solid #0072CC;
+			&.active{
+				background: rgba(darken($bg, 30%), .8);
+			}
+			&.active a{
+				color: white;
+				&:hover{
+					color: white;
+					background: darken($bg, 28%);
+				}
+			}
+			&.disabled {
+				background: darken($bg, 4%);
+				pointer-events: none;
+			}
+			&.disabled a{
+				color: lighten($bg, 20%);
+			}
+			a{
+				color: white;
+				display: block;
+				padding: 15px 20px;
+				// @include transition(all, 300ms);
+				&:hover{
+					color: white;
+					background: darken($bg, 10%); 
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

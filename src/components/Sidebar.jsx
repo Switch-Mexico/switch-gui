@@ -1,6 +1,8 @@
 // Sidebar.jsx
 import React from 'react';
 
+import './Sidebar.css';
+
 export default class Sidebar extends React.Component {
 	render() {
 		return (
@@ -10,10 +12,10 @@ export default class Sidebar extends React.Component {
 				</a>
 
 				<ul className="main-nav" role="nav">
-					<li>
+					<li className="">
 						<a href="#">Information</a>
 					</li>
-					<li>
+					<li className="active">
 						<a href="#">Capacity</a>
 					</li>
 					<li>
@@ -22,7 +24,7 @@ export default class Sidebar extends React.Component {
 					<li>
 						<a href="#">Transmission &amp; Distribution</a>
 					</li>
-					<li>
+					<li className="">
 						<a href="#">Settings</a>
 					</li>
 				</ul>

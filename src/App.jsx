@@ -7,10 +7,18 @@ import MainContent from './components/MainContent';
 import './App.css';
 
 class App extends Component {
+	constructor() {
+		super();
+		this.state = {isProjectLoaded: false };
+		this.loadProject = this.loadProject.bind(this);
+	}
+	loadProject() {
+		this.setState({isProjectLoaded: true});
+	}
 	render() {
 		return (
 			<div className="App h-100">
-				<Sidebar />
+				<Sidebar isProjectLoaded={this.state.isProjectLoaded} loadProject={this.loadProject} />
 				<MainContent />
 			</div>
 		);

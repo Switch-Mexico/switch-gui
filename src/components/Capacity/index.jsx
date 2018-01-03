@@ -34,14 +34,18 @@ export default class Capacity extends React.Component {
 		const prop = propMap[select];
 		const current = {...this.state};
 		current[prop] = value ? value : null;
-		if(select === "bas")
-			current['loadZone'] = null;
-		else if(select === "lzs")
-			current['project'] = null;
-		if(current['balanceArea'] === null){
+		
+		if(select === "bas") {
 			current['loadZone'] = null;
 		}
-		if(current['loadZone'] === null){
+		else if(select === "lzs") {
+			current['project'] = null;
+		}
+
+		if(current['balanceArea'] === null) {
+			current['loadZone'] = null;
+		}
+		if(current['loadZone'] === null) {
 			current['project'] = null;
 		}
 		this.setState(current);
