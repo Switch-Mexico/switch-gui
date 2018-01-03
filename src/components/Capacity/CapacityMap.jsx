@@ -4,7 +4,6 @@ import React from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-import data from '../../data/powerPlants';
 
 import {createInfoBox, setGeoJSON, createLegend} from './mapHelpers.js';
 
@@ -50,11 +49,11 @@ export default class CapacityMap extends React.Component {
 		// Add the box with load zone/balance area info on the top right
 		let infoBox = createInfoBox();
 
-		let shapeLayers = setGeoJSON(data.country, map, this, infoBox);
+		let shapeLayers = setGeoJSON(this.props.data.country, map, this, infoBox);
 
 		infoBox.addTo(map);
 
-		let mapLegend = createLegend(data.country);
+		let mapLegend = createLegend(this.props.data.country);
 		mapLegend.addTo(map);
 
 

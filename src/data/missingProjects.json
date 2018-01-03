@@ -1,0 +1,392 @@
+[
+    {
+        "key": "47",
+        "total_capacity_limit": "370.280",
+        "value": [
+            {
+                "Capacity Limit": 27.43,
+                "id": "47",
+                "load_zone": "Ensenada",
+                "name": "Cipres Tg",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 301.85,
+                "id": "47",
+                "load_zone": "Ensenada",
+                "name": "Ccc 01",
+                "o_m": 3.05
+            },
+            {
+                "Capacity Limit": 41,
+                "id": "47",
+                "load_zone": "Ensenada",
+                "name": "Ienova Rumorosa Sola...",
+                "o_m": 0
+            }
+        ]
+    },
+    {
+        "key": "52",
+        "total_capacity_limit": "263.660",
+        "value": [
+            {
+                "Capacity Limit": 75,
+                "id": "52",
+                "load_zone": "Los Cabos",
+                "name": "Los Cabos Cfe 25000",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 104,
+                "id": "52",
+                "load_zone": "Los Cabos",
+                "name": "Los Cabos Cfe 30000",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 30,
+                "id": "52",
+                "load_zone": "Los Cabos",
+                "name": "Los Cabos 1 Tg",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 27.43,
+                "id": "52",
+                "load_zone": "Los Cabos",
+                "name": "Los Cabos 2 Tg",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 27.23,
+                "id": "52",
+                "load_zone": "Los Cabos",
+                "name": "Los Cabos 3 Tg",
+                "o_m": 3.432
+            }
+        ]
+    },
+    {
+        "key": "06",
+        "total_capacity_limit": "1412.300",
+        "value": [
+            {
+                "Capacity Limit": 158,
+                "id": "06",
+                "load_zone": "Mazatlan",
+                "name": "Mazatlan Ii U1",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 158,
+                "id": "06",
+                "load_zone": "Mazatlan",
+                "name": "Mazatlan Ii U2",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 300,
+                "id": "06",
+                "load_zone": "Mazatlan",
+                "name": "Mazatlan Ii U3",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 796.3,
+                "id": "06",
+                "load_zone": "Mazatlan",
+                "name": "Ccc Cfe 20",
+                "o_m": 3.05
+            }
+        ]
+    },
+    {
+        "key": "19",
+        "total_capacity_limit": "3910.799",
+        "value": [
+            {
+                "Capacity Limit": 495,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Altamira Ii",
+                "o_m": 3.05
+            },
+            {
+                "Capacity Limit": 1036,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Altamira Iii Y Iv",
+                "o_m": 3.05
+            },
+            {
+                "Capacity Limit": 1121,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Altamira V",
+                "o_m": 3.05
+            },
+            {
+                "Capacity Limit": 250,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Altamira U3",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 250,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Altamira U4",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 35.93,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Energia Mk Kf",
+                "o_m": 3.08
+            },
+            {
+                "Capacity Limit": 168,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Enertek",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 16.38,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Gcoradora Petrocel",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 16.359,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Mexichem Resinas Vin...",
+                "o_m": 3.05
+            },
+            {
+                "Capacity Limit": 4,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Mexico Carbon Manufa...",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 129,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Pemex-refinacion Ref...",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 21,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Posco Mexico",
+                "o_m": 6.63
+            },
+            {
+                "Capacity Limit": 10.6,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Styrolution Mexicana",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 27.53,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Tractebel Energia De...",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 330,
+                "id": "19",
+                "load_zone": "Huasteca",
+                "name": "Ctc Cfe 02",
+                "o_m": 2.688
+            }
+        ]
+    },
+    {
+        "key": "20",
+        "total_capacity_limit": "2678.000",
+        "value": [
+            {
+                "Capacity Limit": 1135,
+                "id": "20",
+                "load_zone": "Tamazunchale",
+                "name": "Tamazunchale",
+                "o_m": 3.05
+            },
+            {
+                "Capacity Limit": 80,
+                "id": "20",
+                "load_zone": "Tamazunchale",
+                "name": "Iberdrola Energia Ta...",
+                "o_m": 3.05
+            },
+            {
+                "Capacity Limit": 1013,
+                "id": "20",
+                "load_zone": "Tamazunchale",
+                "name": "Ccc Gen 03",
+                "o_m": 3.05
+            },
+            {
+                "Capacity Limit": 450,
+                "id": "20",
+                "load_zone": "Tamazunchale",
+                "name": "Ccc Otr 03",
+                "o_m": 3.05
+            }
+        ]
+    },
+    {
+        "key": "26",
+        "total_capacity_limit": "1803.804",
+        "value": [
+            {
+                "Capacity Limit": 393,
+                "id": "26",
+                "load_zone": "Salamanca",
+                "name": "Cogcoracion Salamanc...",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 300,
+                "id": "26",
+                "load_zone": "Salamanca",
+                "name": "Salamanca U3",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 250,
+                "id": "26",
+                "load_zone": "Salamanca",
+                "name": "Salamanca U4",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 0.874,
+                "id": "26",
+                "load_zone": "Salamanca",
+                "name": "Agribrands Purina Me...",
+                "o_m": 6.63
+            },
+            {
+                "Capacity Limit": 142.75,
+                "id": "26",
+                "load_zone": "Salamanca",
+                "name": "Pemex-refinacion Ing...",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 717.18,
+                "id": "26",
+                "load_zone": "Salamanca",
+                "name": "Ccc Cfe 21",
+                "o_m": 3.05
+            }
+        ]
+    },
+    {
+        "key": "45",
+        "total_capacity_limit": "53.000",
+        "value": [
+            {
+                "Capacity Limit": 14,
+                "id": "45",
+                "load_zone": "Cozumel",
+                "name": "Chankanaab U1",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 14,
+                "id": "45",
+                "load_zone": "Cozumel",
+                "name": "Chankanaab U2",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 25,
+                "id": "45",
+                "load_zone": "Cozumel",
+                "name": "Chankanaab U4",
+                "o_m": 3.432
+            }
+        ]
+    },
+    {
+        "key": "41",
+        "total_capacity_limit": "411.900",
+        "value": [
+            {
+                "Capacity Limit": 14,
+                "id": "41",
+                "load_zone": "Lerma",
+                "name": "Ciudad Del Carmen U1",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 16,
+                "id": "41",
+                "load_zone": "Lerma",
+                "name": "Ciudad Del Carmen U2",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 17,
+                "id": "41",
+                "load_zone": "Lerma",
+                "name": "Ciudad Del Carmen U3",
+                "o_m": 3.432
+            },
+            {
+                "Capacity Limit": 37.5,
+                "id": "41",
+                "load_zone": "Lerma",
+                "name": "Lerma U2",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 37.5,
+                "id": "41",
+                "load_zone": "Lerma",
+                "name": "Lerma U3",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 37.5,
+                "id": "41",
+                "load_zone": "Lerma",
+                "name": "Lerma U4",
+                "o_m": 2.688
+            },
+            {
+                "Capacity Limit": 252.4,
+                "id": "41",
+                "load_zone": "Lerma",
+                "name": "Transalta Campeche",
+                "o_m": 3.05
+            }
+        ]
+    },
+    {
+        "key": "49",
+        "total_capacity_limit": "322.660",
+        "value": [
+            {
+                "Capacity Limit": 322.66,
+                "id": "49",
+                "load_zone": "San Luis Rio Colorado",
+                "name": "Ccc Cfe 12",
+                "o_m": 3.05
+            }
+        ]
+    }
+]
