@@ -1,0 +1,11 @@
+We have the three files which correspond to the collections in MongoDB:
+
+- loadZones.json
+- powerPlants.json
+- transmissionLines.json
+
+- ba_lz.json : a mapping of the balance areas to their load zones
+
+- lz_projs.json:  I modified the loadZones.json to key the projects by loadZone ID as opposed to being an empty array
+
+- load_zone_projects.json: Projects from Sergio's data

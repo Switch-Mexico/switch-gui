@@ -13,7 +13,7 @@ const getLZs = (balanceArea, data) => {
 };
 
 const getPJs = (loadZone, projects) => {
-	return projects.data[loadZone].projects.map((project, index) => ({id: index, name: project.name}));
+	return projects[loadZone].projects.map((project, index) => ({id: index, name: project.name}));
 };
 let propMap = {
 	'bas': 'balanceArea',

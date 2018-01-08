@@ -13,19 +13,25 @@ export default class Sidebar extends React.Component {
 
 				<ul className="main-nav" role="nav">
 					<li className="">
-						<a href="#">Information</a>
-					</li>
+						<a href="#">Dashboard</a>
+					</li> 
 					<li className="active">
-						<a href="#">Capacity</a>
+						<a href="#">Generation &amp; Storage</a>
 					</li>
 					<li>
-						<a href="#">Dispatch</a>
+						<a href="#">&nbsp; &nbsp; &nbsp;  Dispatch</a>
 					</li>
 					<li>
 						<a href="#">Transmission &amp; Distribution</a>
 					</li>
-					<li className="">
+					<li>
+						<a href="#">&nbsp;  &nbsp; &nbsp; Dispatch</a>
+					</li>
+					<li className="disabled">
 						<a href="#">Settings</a>
+					</li>
+					<li className="disabled">
+						<a href="#">Help</a>
 					</li>
 				</ul>
 			</div>

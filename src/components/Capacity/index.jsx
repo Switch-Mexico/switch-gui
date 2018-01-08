@@ -11,14 +11,17 @@ import StackedChartCard from '../Charts/StackedChartCard';
 
 import './Capacity.css';
 
-import data from '../../data/powerPlants';
-import lz_pjs from '../../data/lz_projs';
+import mydata from '../../data/powerPlants';
+import lz_pjs from '../../data/load_zone_projects';
+
+import {calculatePercentagesLoadZones, processBalanceAreas} from './process_data';
 
 let propMap = {
 	'bas': 'balanceArea',
 	'lzs': 'loadZone',
 	'pjs': 'project'
 };
+const {loadZoneProjects, data} = calculatePercentagesLoadZones(lz_pjs, mydata);
 
 export default class Capacity extends React.Component {
 	constructor() {
@@ -34,7 +37,7 @@ export default class Capacity extends React.Component {
 		const prop = propMap[select];
 		const current = {...this.state};
 		current[prop] = value ? value : null;
-		
+
 		if(select === "bas") {
 			current['loadZone'] = null;
 		}
@@ -51,6 +54,14 @@ export default class Capacity extends React.Component {
 		this.setState(current);
 	}
 	render() {
+		let piechartdata;
+		if(this.state.balanceArea && !this.state.loadZone){
+			piechartdata = [data.country.balancingAreas[this.state.balanceArea], data.country.balancingAreas[this.state.balanceArea]];
+		}
+		else{
+			piechartdata = [loadZoneProjects[this.state.loadZone], data.country.loadZones[this.state.loadZone]];
+		}
+		console.log("piechartdata", piechartdata);
 		return(
 			<div className="Capacity container-fluid p-0">
 				<h1 className="maintitle">Capacity Distribution</h1>
@@ -60,7 +71,7 @@ export default class Capacity extends React.Component {
 						<div className="card capacitycard" style={{height: '94%'}}>
 							<div className="card-header pt-1 pb-1 pl-3" style={{fontSize: 14}}><strong>Mexico</strong></div>
 							<div className="card-body p-0 h-100">
-								{/*<CapacityMap data={data} />*/}
+								<CapacityMap data={data} />
 							</div>
 						</div>
 					</div>
@@ -68,12 +79,12 @@ export default class Capacity extends React.Component {
 						<h5>Time filter</h5>
 						<div className="row no-gutters">
 							<div className="col">
-								{/*<PieChartCard />*/}
+								{piechartdata[0]?<PieChartCard entity={piechartdata[0]} lz={piechartdata[1]} />:'No country selected'}
 							</div>
 						</div>
 						<div className="row no-gutters mt-3">
 							<div className="col">
-								{/*<StackedChartCard />*/}
+								<StackedChartCard />
 							</div>
 						</div>
 						<div className="row mt-3 no-gutters">
