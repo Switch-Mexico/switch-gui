@@ -15,13 +15,13 @@ export default class Sidebar extends React.Component {
 					<li className="">
 						<a href="#">Dashboard</a>
 					</li> 
-					<li className="active">
+					<li className="">
 						<a href="#">Generation &amp; Storage</a>
 					</li>
 					<li>
 						<a href="#">&nbsp; &nbsp; &nbsp;  Dispatch</a>
 					</li>
-					<li>
+					<li className="active">
 						<a href="#">Transmission &amp; Distribution</a>
 					</li>
 					<li>

@@ -61,7 +61,6 @@ export default class Capacity extends React.Component {
 		else{
 			piechartdata = [loadZoneProjects[this.state.loadZone], data.country.loadZones[this.state.loadZone]];
 		}
-		console.log("piechartdata", piechartdata);
 		return(
 			<div className="Capacity container-fluid p-0">
 				<h1 className="maintitle">Capacity Distribution</h1>
