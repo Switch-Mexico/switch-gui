@@ -19,14 +19,14 @@ export default class Sidebar extends React.Component {
 						<a href="#">Generation &amp; Storage</a>
 					</li>
 					<li>
-						<a href="#">&nbsp; &nbsp; &nbsp;  Dispatch</a>
+						<a href="#">Generation Dispatch</a>
 					</li>
 					<li className="active">
 						<a href="#">Transmission &amp; Distribution</a>
 					</li>
-					<li>
+					{/*<li>
 						<a href="#">&nbsp;  &nbsp; &nbsp; Dispatch</a>
-					</li>
+					</li>*/}
 					<li className="disabled">
 						<a href="#">Settings</a>
 					</li>

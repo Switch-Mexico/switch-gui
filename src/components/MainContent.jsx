@@ -7,8 +7,7 @@ export default class MainContent extends React.Component {
 	render() {
 		return(
 			<div className="MainContent">
-				{/*<Capacity />*/}
-				<TransmissionDistribution />
+				<Capacity />
 			</div>
 		);
 	}

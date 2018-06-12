@@ -27,7 +27,7 @@ export default class TransmissionDistribution extends React.Component {
 				<div className="row no-gutters mb-3">
 					<div className="card">
 						<div className="card-header">
-							<p className="m-0 darkgray"><strong>Inter-zonal transmission</strong></p>
+							<p className="m-0 darkgray"><strong>Intra-zonal transmission</strong></p>
 						</div>
 						<div className="card-body" style={{height: '370px', overflowY: 'scroll'}}>
 							<table className="table-striped">
