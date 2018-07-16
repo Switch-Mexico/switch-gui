@@ -1,5 +1,5 @@
 import React from 'react';
-import CapacityMap from '../Capacity/CapacityMap';
+import TransmissionMap from './TransmissionMap';
 import data from '../../data/powerPlants';
 
 import './td.css';
@@ -12,12 +12,6 @@ export default class TransmissionDistribution extends React.Component {
 				<div className="row no-gutters">
 					<div className="col-sm-9">
 						<h1 className="maintitle mb-3">Transmission &amp; Distribution</h1>
-					</div>
-					<div className="col-sm-3">
-						<div className="btn-group d-flex justify-content-end" role="group">
-							<button type="button" className="btn btn-primary">Transmission</button>
-							<button type="button" className="btn btn-outline-primary ">Distribution</button>
-						</div>
 					</div>
 				</div>
 				<div className="row no-gutters timeperiods">
@@ -432,9 +426,9 @@ export default class TransmissionDistribution extends React.Component {
 						</div>
 					</div>
 				</div>
-				<div className="row no-gutters mt-2">
+				<div className="row no-gutters mt-2" style={{height: '40%'}}>
 					<div className="col mr-3">
-						<CapacityMap data={data} />
+						<TransmissionMap />
 					</div>
 					<div className="col">
 						<div className="row no-gutters">

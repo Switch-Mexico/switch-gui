@@ -67,7 +67,6 @@ export function processBalanceAreas(lzpjs, data){
 				}
 			});
 		})
-		console.log(techs);
 		for(let source in techs){
 			if(techs.hasOwnProperty(source)){
 				const entry = {name: fuelNames[source], value: techs[source]};

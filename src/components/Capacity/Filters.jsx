@@ -32,12 +32,12 @@ export default class CapacityFilters extends React.Component{
 					disabled: true,
 					options: []
 				},
-				'lzs': { 
+				'lzs': {
 					default: '-- Load zone --',
 					disabled: true,
 					options: []
 				},
-				'pjs': { 
+				'pjs': {
 					default: '-- Project name --',
 					disabled: true,
 					options: []
@@ -97,20 +97,20 @@ export default class CapacityFilters extends React.Component{
 		return(
 			<div className="Filters mb-4">
 				<div className="row">
-					{Object.keys(selects).map(select => 
+					{Object.keys(selects).map(select =>
 						<div key={select} className="col-sm-4 fw300">
-							<select 
-								onChange={this.handleSelect} 
-								disabled={selects[select].disabled} 
-								name={`${select}_filter`} 
+							<select
+								onChange={this.handleSelect}
+								disabled={selects[select].disabled}
+								name={`${select}_filter`}
 								value={this.props[propMap[select]] || ""}
-								className="custom-select" 
+								className="custom-select"
 								id=""
 							>
 
 								<option value="">{selects[select].default}</option>
 
-								{selects[select].options.map((opt, i) => 
+								{selects[select].options.map((opt, i) =>
 									<option key={i} value={opt.id}>{opt.name}</option>
 								)}
 

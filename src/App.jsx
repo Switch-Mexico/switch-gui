@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import './App.css';
 
