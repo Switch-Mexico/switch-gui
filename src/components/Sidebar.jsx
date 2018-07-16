@@ -2,6 +2,8 @@
 import React from 'react';
 
 import './Sidebar.css';
+import { NavLink } from 'react-router-dom'
+
 
 export default class Sidebar extends React.Component {
 	render() {
@@ -12,26 +14,26 @@ export default class Sidebar extends React.Component {
 				</a>
 
 				<ul className="main-nav" role="nav">
-					<li className="">
-						<a href="#">Dashboard</a>
+					<li className="disabled">
+						<NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink>
 					</li> 
 					<li className="">
-						<a href="#">Generation &amp; Storage</a>
+						<NavLink activeClassName="active" to="/capacity">Generation &amp; Storage</NavLink>
 					</li>
-					<li>
-						<a href="#">Generation Dispatch</a>
+					<li className="disabled">
+						<NavLink activeClassName="active" to="/dispatch">Generation Dispatch</NavLink>
 					</li>
-					<li className="active">
-						<a href="#">Transmission &amp; Distribution</a>
+					<li className="">
+						<NavLink activeClassName="active" to="/transmission">Transmission</NavLink>
 					</li>
 					{/*<li>
-						<a href="#">&nbsp;  &nbsp; &nbsp; Dispatch</a>
+						<NavLink activeClassName="active" to="">&nbsp;  &nbsp; &nbsp; Dispatch</NavLink>
 					</li>*/}
 					<li className="disabled">
-						<a href="#">Settings</a>
+						<NavLink activeClassName="active" to="/settings">Settings</NavLink>
 					</li>
 					<li className="disabled">
-						<a href="#">Help</a>
+						<NavLink activeClassName="active" to="/help">Help</NavLink>
 					</li>
 				</ul>
 			</div>

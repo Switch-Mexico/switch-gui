@@ -26,6 +26,8 @@
 		li{
 			border-bottom: 1px solid #0072CC;
 			&.active{
+			}
+			a.active {
 				background: rgba(darken($bg, 30%), .8);
 			}
 			&.active a{

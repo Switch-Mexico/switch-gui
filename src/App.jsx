@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import './App.css';
 
@@ -17,10 +18,12 @@ class App extends Component {
 	}
 	render() {
 		return (
-			<div className="App h-100">
-				<Sidebar isProjectLoaded={this.state.isProjectLoaded} loadProject={this.loadProject} />
-				<MainContent />
-			</div>
+			<Router>
+				<div className="App h-100">
+					<Sidebar isProjectLoaded={this.state.isProjectLoaded} loadProject={this.loadProject} />
+					<MainContent />
+				</div>
+			</Router>
 		);
 	}
 }
