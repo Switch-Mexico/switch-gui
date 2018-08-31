@@ -5,12 +5,11 @@ import React, { Component } from 'react';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 import { BrowserRouter as Router } from "react-router-dom";
-import { parseTSV, constructPeriods } from './helpers';
+import { parseTSV, constructPeriods, calculateTD } from './helpers';
 
 import './App.css';
 
 function readCSV(e, instance) {
-	// console.log(reader.fileName);
 	let text = e.target.result;
 	const data = {...instance.state.data};
 	switch(e.target.fileName) {
@@ -23,10 +22,12 @@ function readCSV(e, instance) {
 		case 'periods.tab':
 			data['periods'] = constructPeriods(text);
 		break;
+		case 'load_zones.tab':
+			data['td'] = {'existingTD': calculateTD(text)};
+		break;
 		default: break;
 	}
 	instance.setState({data});
-	// this.setState({content: e.target.result});
 }
 
 class App extends Component {

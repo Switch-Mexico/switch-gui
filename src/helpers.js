@@ -15,7 +15,6 @@ export const parseTSV = (str) => {
 export const constructPeriods = (str) => {
 	try {
 		let res = d3.tsvParse(str);
-		console.log(res);
 		let periods = [];
 		periods.push(+res[0]['period_start']);
 		res.forEach((row, i) => {
@@ -27,3 +26,16 @@ export const constructPeriods = (str) => {
 		return null;
 	}
 }
+
+export const calculateTD = (str) => {
+	try {
+		let rows = d3.tsvParse(str);
+		return rows.reduce((acc, row) => {
+			return acc + parseFloat(row['existing_local_td'], 10);
+		}, 0);
+	}
+	catch(e) {
+		console.error(e);
+		return null;
+	}
+};

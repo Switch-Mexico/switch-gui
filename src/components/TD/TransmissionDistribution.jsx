@@ -7,6 +7,7 @@ import './td.css';
 
 export default class TransmissionDistribution extends React.Component {
 	render() {
+		const projectData = this.props.data;
 		return(
 			<div className="TransDist container-fluid p-0">
 				<div className="row no-gutters">
@@ -16,7 +17,7 @@ export default class TransmissionDistribution extends React.Component {
 				</div>
 				<div className="row no-gutters timeperiods">
 					<div className="col m-0">
-						<PeriodSlider bg="none" title="" mb="0" />
+						<PeriodSlider periods={projectData ? projectData.periods : null} bg="none" title="" mb="0" />
 					</div>
 				</div>
 				<div className="row no-gutters mb-3">
@@ -32,7 +33,7 @@ export default class TransmissionDistribution extends React.Component {
 										{
 											this.props.data &&
 											this.props.data['transmission_lines'] &&
-											this.props.data.transmission_lines.columns.map(c => <th>{c}</th>)
+											this.props.data.transmission_lines.columns.map((c,i) => <th key={`tableHTML_row_${i}`}>{c}</th>)
 										}
 									</tr>
 								</thead>
@@ -56,7 +57,7 @@ export default class TransmissionDistribution extends React.Component {
 				</div>
 				<div className="row no-gutters mt-2" style={{height: '40%'}}>
 					<div className="col mr-3">
-						<TransmissionMap />
+						<TransmissionMap tlines={projectData && projectData.transmission_lines} />
 					</div>
 					<div className="col">
 						<div className="row no-gutters">
@@ -64,7 +65,7 @@ export default class TransmissionDistribution extends React.Component {
 								<div className="card border-0 rounded-0 singlenum">
 									<h5 className="card-title">Total Installed Capacity</h5>
 									<div className="card-body">
-										<p className="largenum">1.8M</p>
+										<p className="largenum">{projectData && projectData.td && (projectData.td.existingTD/1000).toFixed(1)+"K" || "NA"}</p>
 										<p className="units">MW</p>
 									</div>
 								</div>
@@ -82,7 +83,7 @@ export default class TransmissionDistribution extends React.Component {
 								<div className="card border-0 rounded-0 singlenum">
 									<h5 className="card-title">Total Periods</h5>
 									<div className="card-body">
-										<p className="largenum">21</p>
+										<p className="largenum">{projectData && projectData.periods && projectData.periods.length-1 || "NA"}</p>
 										<p className="units">&nbsp;</p>
 									</div>
 								</div>

@@ -11,9 +11,19 @@
 2. Run `npm install` in the directory where you cloned it
 3. Run `npm start`
 
-## Use cases video
 
+## TODOS
 
+1. Check that the load zones correspond to the 53 we have in Mexico. `load_zones.tab`
+2. Switch to TypeScript
+3. Add support for `*.tsv` files (do not hardcode extensions)
+4. Add propTypes to components
+5. Add Redux?
+
+### Code Health
+
+1. Add linter
+2. Switch to TypeScript
 
 # EXCEPTIONS:
 
