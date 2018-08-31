@@ -1,12 +1,14 @@
+// App.jsx
+
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 import { BrowserRouter as Router } from "react-router-dom";
-import {parseTSV} from './helpers';
+import { parseTSV, constructPeriods } from './helpers';
 
 import './App.css';
+
 function readCSV(e, instance) {
 	// console.log(reader.fileName);
 	let text = e.target.result;
@@ -19,13 +21,14 @@ function readCSV(e, instance) {
 			data['transmission_lines'] = parseTSV(text);
 		break;
 		case 'periods.tab':
-			alert("Periods not enabled");
+			data['periods'] = constructPeriods(text);
 		break;
 		default: break;
 	}
 	instance.setState({data});
 	// this.setState({content: e.target.result});
 }
+
 class App extends Component {
 	constructor() {
 		super();

@@ -9,17 +9,6 @@ export default class Sidebar extends React.Component {
 	openFileBrowser = () => {
 		this.refs.fileinput.click();
 	}
-	processFolderUpload = (e) => {
-		let files = e.target.files;
-		let reader = new FileReader();
-		reader.onload = (e)  => {
-			console.log(e);
-			let text = e.target.result;
-		};
-		for (var i = 0; i < files.length; i++) {
-			reader.readAsText(files[i]);
-		}
-	}
 	componentDidMount() {
 		this.refs.fileinput.directory = true;
 		this.refs.fileinput.webkitdirectory = true;

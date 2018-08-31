@@ -80,7 +80,7 @@ export default class Capacity extends React.Component {
 					<div className="col-md-4 ml-3">
 						<div className="row no-gutters">
 							<div className="col">
-								<PeriodSlider title="Periods" />
+								<PeriodSlider periods={projectData ? projectData.periods : null} title="Periods" />
 							</div>
 						</div>
 						<div className="row no-gutters">
