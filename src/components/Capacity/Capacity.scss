@@ -45,7 +45,21 @@
 		font-weight: 300;
 		color: black;
 	}
-	p.units{
-
+}
+.card.singlenum {
+	min-height: 158px;
+}
+.card.emptymsg {
+	padding: 16px 10px;
+	p{
+		margin: 0;
+		text-align: center;
 	}
+	.card-body {
+		padding: 0;
+	}
+}
+.card table {
+	width: 95%;
+	margin: 0 auto;
 }

@@ -68,7 +68,7 @@ export default class CapacityFilters extends React.Component{
 	}
 	populateSelects(nextProps) {
 		// Populate the balance areas select
-		const {balanceArea, loadZone, project, lz_pjs} = nextProps || this.props;
+		const {balanceArea, loadZone, lz_pjs} = nextProps || this.props;
 		const selects = {...this.state.selects};
 
 		selects['lzs'].disabled = balanceArea === null;

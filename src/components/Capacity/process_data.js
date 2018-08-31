@@ -54,7 +54,7 @@ export function processBalanceAreas(lzpjs, data){
 		let brkdown = [];
 		let techs = {};
 		balz[key].forEach(lzkey => {
-			let lzk = parseInt(lzkey) + '';
+			let lzk = parseInt(lzkey, 10) + '';
 			if(!(lzk in lzpjs))
 				return;
 			const loadZone = lzpjs[lzk];

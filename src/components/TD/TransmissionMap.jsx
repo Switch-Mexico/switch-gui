@@ -4,11 +4,17 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 
-import mydata from '../../data/powerPlants.json';
 import * as d3 from 'd3-dsv';
 import request from 'request';
 
-const fs = require('fs');
+import data from '../../data/powerPlants.json';
+import cloneDeep from 'lodash/cloneDeep';
+
+const mydata = cloneDeep(data);
+
+
+
+// const fs = require('fs');
 
 const pad = (pad, str, padLeft) => {
 	if (typeof str === 'undefined')
@@ -147,9 +153,6 @@ const drawExistingTLs = (self, map, callback, args)  => {
 };
 
 export default class TransmissionMap extends React.Component {
-	constructor() {
-		super();
-	}
 	componentDidMount() {
 		this.loadMap();
 	}
@@ -213,8 +216,8 @@ export default class TransmissionMap extends React.Component {
 			pane: 'labels'
 		}).addTo(map);
 
-
-		this.drawLoadZones(mydata.country, map);
+		const data = JSON.parse(JSON.stringify(mydata.country));
+		this.drawLoadZones(data, map);
 
 		let infoBox = createInfoBox();
 

@@ -60,7 +60,8 @@ export default class CapacityMap extends React.Component {
 		map.addLayer(shapeLayers.Switch);
 
 		// Add a controller for the layers (these are base layers, only one of them can be selected at a time)
-		let controller = L.control.layers(shapeLayers).addTo(map);
+		// let controller = L.control.layers(shapeLayers).addTo(map);
+		L.control.layers(shapeLayers).addTo(map);
 
 		// Update <Map /> state
 		// this.props.setLegend(mapLegend);

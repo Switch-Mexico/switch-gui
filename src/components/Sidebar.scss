@@ -51,10 +51,14 @@
 				// @include transition(all, 300ms);
 				&:hover{
 					color: white;
-					background: darken($bg, 10%); 
+					background: darken($bg, 10%);
 					text-decoration: none;
 				}
 			}
 		}
+	}
+	.btn-dark {
+		background-color: #1E2C47FF;
+		font-size: 12px;
 	}
 }
