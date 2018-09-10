@@ -11,6 +11,9 @@
 2. Run `npm install` in the directory where you cloned it
 3. Run `npm start`
 
+## Add to sidebar
+
+https://youtu.be/qPyGMcT8Bbs
 
 ## TODOS
 
