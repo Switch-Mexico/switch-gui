@@ -13,7 +13,11 @@
 
 ## Add to sidebar
 
-https://youtu.be/qPyGMcT8Bbs
+I've prepared a small tutorial on how to modify the sidebar to add a route. This is meant to provide a more general example of an entry point to the codebase.
+
+
+[![Add to Sidebar](http://monywize.com/images/video-placeholdere9f3.png?1454083235)](https://youtu.be/qPyGMcT8Bbs)
+
 
 ## TODOS
 
