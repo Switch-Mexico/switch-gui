@@ -25,6 +25,15 @@ function readCSV(e, instance) {
 		case 'load_zones.tab':
 			data['td'] = {'existingTD': calculateTD(text)};
 		break;
+		case 'DispatchGen.tab':
+			data['dispatchGen'] = parseTSV(text);
+		break;
+		case 'generation_projects_info.tab':
+			data['generation_projects_info'] = parseTSV(text);
+		break;
+		case 'timepoints.tab':
+			data['timepoints'] = parseTSV(text);
+		break;
 		default: break;
 	}
 	instance.setState({data});
@@ -55,7 +64,7 @@ class App extends Component {
 			<Router>
 				<div className="App h-100">
 					<Sidebar loadCSV={this.loadCSV} isProjectLoaded={this.state.isProjectLoaded} loadProject={this.loadProject} />
-					<MainContent data={this.state.data} content={this.state.content} />
+					<MainContent loadCSV={this.loadCSV} data={this.state.data} content={this.state.content} />
 				</div>
 			</Router>
 		);
