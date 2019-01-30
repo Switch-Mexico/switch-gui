@@ -27,7 +27,7 @@ export default class Sidebar extends React.Component {
 					<li className="">
 						<NavLink activeClassName="active" to="/capacity">Generation &amp; Storage</NavLink>
 					</li>
-					<li className="disabled">
+					<li className="">
 						<NavLink activeClassName="active" to="/dispatch">Generation Dispatch</NavLink>
 					</li>
 					<li className="">

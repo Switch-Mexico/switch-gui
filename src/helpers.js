@@ -12,6 +12,16 @@ export const parseTSV = (str) => {
 	}
 };
 
+export const parseCSV = (str) => {
+	try {
+		let res = d3.csvParse(str);
+		return res;
+	} catch(e) {
+		console.error(e);
+		return null;
+	}
+};
+
 export const constructPeriods = (str) => {
 	try {
 		let res = d3.tsvParse(str);
