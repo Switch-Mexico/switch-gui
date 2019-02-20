@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "csvtojson": "^2.0.8",
     "d3-dsv": "^1.0.10",
     "leaflet": "^1.2.0",
     "node-sass-chokidar": "^0.0.3",
@@ -13,7 +12,9 @@
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.0.17",
+    "reactstrap": "^7.1.0",
     "recharts": "^1.0.0-beta.7",
+    "request": "^2.87.0"
   },
   "scripts": {
     "start-js": "react-scripts start",

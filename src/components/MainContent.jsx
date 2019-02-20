@@ -1,11 +1,13 @@
 // MainContent.jsx
 import React from 'react';
 import Capacity from './Capacity';
-import GenerationDispatch from './Dispatch/GenerationDispatch'
+import GenerationDispatch from './Dispatch/GenerationDispatch';
+import InstalledCapacityChart from './InstalledCapacityChart/InstalledCapacityChart';
 import TransmissionDistribution from './TD/TransmissionDistribution';
 import Contributors from './Contributors';
-import SomeLink from './SomeLink';
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+// import SomeLink from './SomeLink';
+import { Route } from 'react-router-dom'
+// import { BrowserRouter, Route, Link } from 'react-router-dom'
 import TableTest from './TableTest';
 
 const Unloaded = () => {
@@ -22,6 +24,7 @@ export default class MainContent extends React.Component {
 				<Route exact path="/" render={(props) => <Unloaded />}></Route>
 				<Route exact path="/capacity" render={(props) => <Capacity {...props} data={this.props.data} />}></Route>
 				<Route exact path="/dispatch" render={(props) => <GenerationDispatch {...props} data={this.props.data} />}></Route>
+				<Route exact path="/installed-capacity" render={(props) => <InstalledCapacityChart {...props} data={this.props.data} />}></Route>
 				<Route exact path="/transmission" render={props => <TransmissionDistribution {...props} data={this.props.data} />}></Route>
 				<Route exact path="/contributors" render={(props) => <Contributors content={this.props.content} {...props} />}></Route>
 				<Route exact path="/test" render={(props) => <TableTest content={this.props.content} {...props} />}></Route>

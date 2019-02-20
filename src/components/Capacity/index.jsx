@@ -9,14 +9,15 @@ import PeriodSlider from '../PeriodSlider/PeriodSlider';
 
 // Charts
 import PieChartCard from '../Charts/PieChartCard';
-import StackedChartCard from '../Charts/StackedChartCard';
+// import StackedChartCard from '../Charts/StackedChartCard';
 
 import './Capacity.css';
 
 import mydata from '../../data/powerPlants';
 import lz_pjs from '../../data/load_zone_projects';
 
-import {calculatePercentagesLoadZones, processBalanceAreas} from './process_data';
+import {calculatePercentagesLoadZones} from './process_data';
+// import {calculatePercentagesLoadZones, processBalanceAreas} from './process_data';
 
 let propMap = {
 	'bas': 'balanceArea',

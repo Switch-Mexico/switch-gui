@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 import { BrowserRouter as Router } from "react-router-dom";
-import { parseTSV, constructPeriods, calculateTD } from './helpers';
+import { parseCSV, parseTSV, constructPeriods, calculateTD } from './helpers';
 
 import './App.css';
 
@@ -24,6 +24,33 @@ function readCSV(e, instance) {
 		break;
 		case 'load_zones.tab':
 			data['td'] = {'existingTD': calculateTD(text)};
+		break;
+		case 'dispatch.csv':
+			const dispatch = parseCSV(text);
+			const dispatch_data_map = {};
+			const gen_energy_source_list = [];
+			for (var i = 0; i < dispatch.length; i++) {
+				const dispatch_entry = dispatch[i];
+				const gen_energy_source = dispatch_entry['gen_energy_source'];
+				const timestamp = dispatch_entry['timestamp'];
+				if (!(gen_energy_source in gen_energy_source_list)){
+					gen_energy_source_list.push(gen_energy_source);
+				}
+				if (!(timestamp in dispatch_data_map)) {
+					dispatch_data_map[timestamp] = {};
+					dispatch_data_map[timestamp]['timestamp'] = dispatch_entry['timestamp'];
+				}
+				if (!(gen_energy_source in dispatch_data_map[timestamp])) {
+					dispatch_data_map[timestamp][gen_energy_source] =
+						parseFloat(dispatch_entry['DispatchGen_MW']);
+				} else {
+					dispatch_data_map[timestamp][gen_energy_source] =
+						dispatch_data_map[timestamp][gen_energy_source]
+						+ parseFloat(dispatch_entry['DispatchGen_MW']);
+				}
+			}
+			data['dispatch_energy_source_list'] = [...new Set(gen_energy_source_list)].reverse();
+			data['dispatch'] = Object.values(dispatch_data_map);
 		break;
 		case 'DispatchGen.tab':
 			data['dispatchGen'] = parseTSV(text);
