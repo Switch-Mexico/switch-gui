@@ -91,7 +91,7 @@ class App extends Component {
 			<Router>
 				<div className="App h-100">
 					<Sidebar loadCSV={this.loadCSV} isProjectLoaded={this.state.isProjectLoaded} loadProject={this.loadProject} />
-					<MainContent loadCSV={this.loadCSV} data={this.state.data} content={this.state.content} />
+					<MainContent data={this.state.data} content={this.state.content} />
 				</div>
 			</Router>
 		);
