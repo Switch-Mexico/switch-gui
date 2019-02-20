@@ -1,32 +1,17 @@
 import React from 'react';
-import Table from './Table'
+import Table from '../Charts/Table'
 import {
 	Area,
 	AreaChart,
 	Brush,
 	CartesianGrid,
-	Legend,
 	ReferenceLine,
 	ResponsiveContainer,
 	Tooltip,
 	XAxis,
 	YAxis,
 } from 'recharts';
-
-const energy_colors = {
-	coal: '#192b42',
-  diesel: '#c78181',
-  fuel_oil: '#41264f',
-  natural_gas: '#91b29f',
-  uranium: '#8dd228',
-  solar_distributed: '#facc40',
-  natural_gas_cogen: '#b8adba',
-  water_nonrenewable: '#669999',
-  water_renewable: '#003366',
-  geosteam: '#cd5c5c',
-  solar: '#ffe697',
-  wind: '#336699',
-};
+import { energy_colors } from '../Charts/colors'
 
 const getInitialState = {
   startIndex: 0,
@@ -128,7 +113,7 @@ export default class GenerationDispatch extends React.Component {
 						{dispatchAreaChart}
           </AreaChart>
         </ResponsiveContainer>
-				<Table data={this.props.data} energy_colors={energy_colors}/>
+				<Table data={this.props.data ? this.props.data['dispatch_energy_source_list'] : []} colors={energy_colors}/>
       </div>
     );
   }

@@ -52,6 +52,57 @@ function readCSV(e, instance) {
 			data['dispatch_energy_source_list'] = [...new Set(gen_energy_source_list)].reverse();
 			data['dispatch'] = Object.values(dispatch_data_map);
 		break;
+		case 'gen_cap.txt':
+			const capacity = parseTSV(text);
+			var capacity_source_data_map = {};
+			var capacity_tech_data_map = {};
+			var gen_energy_source_list = [];
+			var gen_tech_list = [];
+			for (var i = 0; i < capacity.length; i++) {
+				const capacity_entry = capacity[i];
+				const gen_energy_source = capacity_entry['gen_energy_source'];
+				const gen_tech = capacity_entry['gen_tech'];
+				const period = capacity_entry['PERIOD'];
+
+				//Process data for gen_tech
+				if (!(gen_tech in gen_tech_list)){
+					gen_tech_list.push(gen_tech);
+				}
+				if (!(period in capacity_tech_data_map)) {
+					capacity_tech_data_map[period] = {};
+					capacity_tech_data_map[period]['PERIOD'] = capacity_entry['PERIOD'];
+				}
+				if (!(gen_tech in capacity_tech_data_map[period])) {
+					capacity_tech_data_map[period][gen_tech] =
+						parseFloat(capacity_entry['GenCapacity']);
+				} else {
+					capacity_tech_data_map[period][gen_tech] =
+						capacity_tech_data_map[period][gen_tech]
+						+ parseFloat(capacity_entry['GenCapacity']);
+				}
+
+				//Process data for gen_energy_source
+				if (!(gen_energy_source in gen_energy_source_list)){
+					gen_energy_source_list.push(gen_energy_source);
+				}
+				if (!(period in capacity_source_data_map)) {
+					capacity_source_data_map[period] = {};
+					capacity_source_data_map[period]['PERIOD'] = capacity_entry['PERIOD'];
+				}
+				if (!(gen_energy_source in capacity_source_data_map[period])) {
+					capacity_source_data_map[period][gen_energy_source] =
+						parseFloat(capacity_entry['GenCapacity']);
+				} else {
+					capacity_source_data_map[period][gen_energy_source] =
+						capacity_source_data_map[period][gen_energy_source]
+						+ parseFloat(capacity_entry['GenCapacity']);
+				}
+			}
+			data['gen_tech_list'] = [...new Set(gen_tech_list)].reverse();
+			data['gen_energy_source_list'] = [...new Set(gen_energy_source_list)].reverse();
+			data['gen_cap_tech'] = Object.values(capacity_tech_data_map)
+			data['gen_cap_energy_source'] = Object.values(capacity_source_data_map)
+		break;
 		case 'DispatchGen.tab':
 			data['dispatchGen'] = parseTSV(text);
 		break;

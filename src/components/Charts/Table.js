@@ -1,30 +1,29 @@
 import React from 'react';
 import { Table } from 'reactstrap';
-import './Dispatch.css';
+import './Table.css';
 
 export default class T extends React.Component {
   render() {
-    const dispatch_energy_source_list = (this.props.data && this.props.data['dispatch_energy_source_list']) ?
-      this.props.data['dispatch_energy_source_list'] : [];
+    const list = this.props.data ? this.props.data : [];
     return (
       <div className="table">
         <Table bordered hover>
           <thead>
             <tr>
               <th>Key</th>
-              <th>Energy Source</th>
+              <th>Technology</th>
             </tr>
           </thead>
             <tbody>
-              {dispatch_energy_source_list.map((source, key) => (
+              {list.map((tech, key) => (
                 <tr key={key}>
                   <td>
                     <span
                      className="Legend--color"
-                     style={{ backgroundColor: (source in this.props.energy_colors) ? this.props.energy_colors[source] : '#000000' }}
+                     style={{ backgroundColor: (tech in this.props.colors) ? this.props.colors[tech] : '#000000' }}
                     />
                   </td>
-                  <td>{source}</td>
+                  <td>{tech}</td>
                 </tr>
               ))}
             </tbody>
