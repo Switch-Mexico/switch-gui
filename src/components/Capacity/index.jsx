@@ -32,9 +32,18 @@ export default class Capacity extends React.Component {
 		this.state = {
 			balanceArea: null,
 			loadZone: null,
-			project: null
+			project: null,
+			period: null,
 		};
 		this.updateSelected = this.updateSelected.bind(this);
+		this.updatePeriod = this.updatePeriod.bind(this);
+		this.getTotalInstalledCapacity = this.getTotalInstalledCapacity.bind(this);
+		this.getTotalCost = this.getTotalCost.bind(this);
+		this.getTotalProjectedCapacity = this.getTotalProjectedCapacity.bind(this);
+		this.formatNumber = this.formatNumber.bind(this);
+	}
+	updatePeriod(period) {
+		this.setState({period: period})
 	}
 	updateSelected(select, value) {
 		const prop = propMap[select];
@@ -55,6 +64,31 @@ export default class Capacity extends React.Component {
 			current['project'] = null;
 		}
 		this.setState(current);
+	}
+
+	formatNumber(num) {
+		if (num >= 1000000000){
+			return String((Number(num.toPrecision(2))/1000000000))+"B"
+		} else if (num >= 1000000){
+			return String((Number(num.toPrecision(2))/1000000))+"M"
+		} else if (num >= 1000){
+			return String((Number(num.toPrecision(2))/1000))+"K"
+		} else {
+			return String(Number(num.toPrecision(2)))
+		}
+	}
+	getTotalInstalledCapacity(period) {
+		const nonNullPeriod = (!period && this.props.data && this.props.data['BuildGenPeriods']) ? this.props.data['BuildGenPeriods'][0] : period;
+		return (this.props.data && this.props.data['BuildGen'] && nonNullPeriod in this.props.data['BuildGen']) ?
+			this.formatNumber(this.props.data['BuildGen'][nonNullPeriod]['BuildGen']) : "0";
+	}
+	getTotalCost(period) {
+		const nonNullPeriod = (!period && this.props.data && this.props.data['electricity_cost']) ? this.props.data['electricity_cost'][0] : period;
+		return (this.props.data && this.props.data['electricity_cost'] && nonNullPeriod in this.props.data['electricity_cost']) ?
+			this.formatNumber(this.props.data['electricity_cost'][nonNullPeriod]['cost']) : "0";
+	}
+	getTotalProjectedCapacity(period) {
+
 	}
 	render() {
 		const projectData = this.props.data;
@@ -81,7 +115,7 @@ export default class Capacity extends React.Component {
 					<div className="col-md-4 ml-3">
 						<div className="row no-gutters">
 							<div className="col">
-								<PeriodSlider periods={projectData ? projectData.periods : null} title="Periods" />
+								<PeriodSlider periods={this.props.data && this.props.data['BuildGenPeriods'] ? this.props.data['BuildGenPeriods'] : null} title="Periods" updatePeriod={this.updatePeriod}/>
 							</div>
 						</div>
 						<div className="row no-gutters">
@@ -119,7 +153,7 @@ export default class Capacity extends React.Component {
 								<div className="card border-0 rounded-0 singlenum">
 									<h5 className="card-title">Total Cost</h5>
 									<div className="card-body">
-										<p className="largenum">250K</p>
+										<p className="largenum">{this.getTotalCost(this.state.period)}</p>
 										<p className="units">USD</p>
 									</div>
 								</div>
@@ -130,7 +164,7 @@ export default class Capacity extends React.Component {
 								<div className="card border-0 rounded-0 singlenum">
 									<h5 className="card-title">Total Installed Capacity</h5>
 									<div className="card-body">
-										<p className="largenum">1.8M</p>
+										<p className="largenum">{this.getTotalInstalledCapacity(this.state.period)}</p>
 										<p className="units">MW</p>
 									</div>
 								</div>

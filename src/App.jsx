@@ -112,6 +112,37 @@ function readCSV(e, instance) {
 		case 'timepoints.tab':
 			data['timepoints'] = parseTSV(text);
 		break;
+		case 'BuildGen.tab':
+			const build_gen = parseTSV(text);
+			var time_capacity_data_map = {};
+			for (var i = 0; i < build_gen.length; i++) {
+				const capacity_entry = build_gen[i];
+				const period = parseInt(capacity_entry['GEN_BLD_YRS_2']);
+				if (!(period in time_capacity_data_map)) {
+					time_capacity_data_map[period] = {};
+					// time_capacity_data_map[period]['PERIOD'] = capacity_entry['PERIOD'];
+					time_capacity_data_map[period]['BuildGen'] = 0;
+				}
+				time_capacity_data_map[period]['BuildGen'] += parseFloat(capacity_entry['BuildGen'])
+			}
+			data['BuildGen'] = time_capacity_data_map;
+			data['BuildGenPeriods'] = Object.keys(data['BuildGen']).map((periodStr) => parseInt(periodStr));
+		break;
+		case 'electricity_cost.csv':
+			const electricity_cost = parseCSV(text);
+			var electricity_cost_map = {};
+			for (var i = 0; i < electricity_cost.length; i++) {
+				const cost_entry = electricity_cost[i];
+				const period = parseInt(cost_entry['PERIOD']);
+				if (!(period in electricity_cost_map)) {
+					electricity_cost_map[period] = {};
+					// electricity_cost_map[period]['PERIOD'] = cost_entry['PERIOD'];
+					electricity_cost_map[period]['cost'] = 0;
+				}
+				electricity_cost_map[period]['cost'] += parseFloat(cost_entry['SystemCostPerPeriod_Real'])
+			}
+			data['electricity_cost'] = electricity_cost_map;
+		break;
 		default: break;
 	}
 	instance.setState({data});
@@ -127,8 +158,10 @@ class App extends Component {
 		this.setState({isProjectLoaded: true});
 	}
 	loadCSV = (e) => {
+		console.log('Loading files...')
 		let files = e.target.files;
 		for (var i = 0; i < files.length; i++) {
+			console.log(String(i+1) + " out of " + String(files.length) + " files loaded")
 			let reader = new FileReader();
 			reader.onload = (e) => {
 				readCSV.call(reader, e, this);
@@ -136,6 +169,7 @@ class App extends Component {
 			reader.fileName = files[i].name;
 			reader.readAsText(files[i]);
 		}
+		console.log("Done loading files!!!")
 	}
 	render() {
 		return (

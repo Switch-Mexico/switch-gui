@@ -25,7 +25,7 @@ export default class Sidebar extends React.Component {
 						<input type="file" ref="fileinput" id="folder_input" className="d-none" multiple={true} onChange={this.props.loadCSV} />
 						<a href="#" onClick={this.openFileBrowser} className="loadProject btn btn-dark">Load project</a>
 					</div>
-					<li className="disabled">
+					<li className="">
 						<NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink>
 					</li>
 					<li className="">
