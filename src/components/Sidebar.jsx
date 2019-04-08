@@ -1,5 +1,6 @@
 // Sidebar.jsx
 import React from 'react';
+import ProgressBar from 'progressbar.js';
 
 import './Sidebar.css';
 import { NavLink } from 'react-router-dom'
@@ -29,16 +30,16 @@ export default class Sidebar extends React.Component {
 						<NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink>
 					</li>
 					<li className="">
-						<NavLink activeClassName="active" to="/capacity">Generation &amp; Storage</NavLink>
+						<NavLink activeClassName="active" to="/capacity">Capacity Map</NavLink>
 					</li>
 					<li className="">
 						<NavLink activeClassName="active" to="/dispatch">Generation Dispatch</NavLink>
 					</li>
 					<li className="">
-						<NavLink activeClassName="active" to="/transmission">Transmission</NavLink>
+						<NavLink activeClassName="active" to="/transmission">Transmission Map</NavLink>
 					</li>
 					<li className="">
-						<NavLink activeClassName="active" to="/installed-capacity">Installed Capacity</NavLink>
+						<NavLink activeClassName="active" to="/installed-capacity">Installed Capacity Graph</NavLink>
 					</li>
 					<li className="disabled">
 						<NavLink activeClassName="active" to="/settings">Settings</NavLink>

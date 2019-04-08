@@ -87,11 +87,15 @@ export default class Capacity extends React.Component {
 		return (this.props.data && this.props.data['electricity_cost'] && nonNullPeriod in this.props.data['electricity_cost']) ?
 			this.formatNumber(this.props.data['electricity_cost'][nonNullPeriod]['cost']) : "0";
 	}
-	getTotalProjectedCapacity(period) {
-
+	getTotalProjectedCapacity() {
+		return (this.props.data && this.props.data['gen_cap_sum']) ?
+			this.formatNumber(this.props.data['gen_cap_sum']) : "0";
 	}
 	render() {
 		const projectData = this.props.data;
+		const periods = this.props.data && this.props.data['BuildGenPeriods'] ? this.props.data['BuildGenPeriods'] : null
+		const minPeriod = periods ? Math.min(...periods) : 2016
+		const maxPeriod = periods ? Math.max(...periods) : 2020
 		let piechartdata;
 		if(this.state.balanceArea && !this.state.loadZone){
 			piechartdata = [data.country.balancingAreas[this.state.balanceArea], data.country.balancingAreas[this.state.balanceArea]];
@@ -115,7 +119,7 @@ export default class Capacity extends React.Component {
 					<div className="col-md-4 ml-3">
 						<div className="row no-gutters">
 							<div className="col">
-								<PeriodSlider periods={this.props.data && this.props.data['BuildGenPeriods'] ? this.props.data['BuildGenPeriods'] : null} title="Periods" updatePeriod={this.updatePeriod}/>
+								<PeriodSlider periods={periods} title="Periods" updatePeriod={this.updatePeriod}/>
 							</div>
 						</div>
 						<div className="row no-gutters">
@@ -171,9 +175,9 @@ export default class Capacity extends React.Component {
 							</div>
 							<div className="col ml-2">
 								<div className="card border-0 rounded-0 singlenum">
-									<h5 className="card-title">Total Projected Capacity</h5>
+									<h5 className="card-title">Total Projected Capacity ({minPeriod}-{maxPeriod})</h5>
 									<div className="card-body">
-										<p className="largenum">250K</p>
+										<p className="largenum">{this.getTotalProjectedCapacity()}</p>
 										<p className="units">MW</p>
 									</div>
 								</div>

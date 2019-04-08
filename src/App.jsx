@@ -58,6 +58,7 @@ function readCSV(e, instance) {
 			var capacity_tech_data_map = {};
 			var gen_energy_source_list = [];
 			var gen_tech_list = [];
+			var gen_cap_sum = 0;
 			for (var i = 0; i < capacity.length; i++) {
 				const capacity_entry = capacity[i];
 				const gen_energy_source = capacity_entry['gen_energy_source'];
@@ -80,6 +81,7 @@ function readCSV(e, instance) {
 						capacity_tech_data_map[period][gen_tech]
 						+ parseFloat(capacity_entry['GenCapacity']);
 				}
+				gen_cap_sum += parseFloat(capacity_entry['GenCapacity'])
 
 				//Process data for gen_energy_source
 				if (!(gen_energy_source in gen_energy_source_list)){
@@ -102,6 +104,7 @@ function readCSV(e, instance) {
 			data['gen_energy_source_list'] = [...new Set(gen_energy_source_list)].reverse();
 			data['gen_cap_tech'] = Object.values(capacity_tech_data_map)
 			data['gen_cap_energy_source'] = Object.values(capacity_source_data_map)
+			data['gen_cap_sum'] = gen_cap_sum
 		break;
 		case 'DispatchGen.tab':
 			data['dispatchGen'] = parseTSV(text);
