@@ -1,0 +1,30 @@
+.table {
+  overflow: scroll;
+  height: 175px;
+  width: 320px;
+  margin-top: 5px;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+.Legend {
+  display : flex;
+
+	&--color {
+		display: inline-block;
+		vertical-align: middle;
+		border-radius: 2px;
+		width: 16px;
+		height: 16px;
+	}
+
+	&--label {
+		display: inline-block;
+		vertical-align: middle;
+		font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    color: #34495e;
+    margin-left: 2px;
+		margin-right: 20px;
+	}
+}

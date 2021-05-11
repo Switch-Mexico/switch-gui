@@ -1,5 +1,6 @@
 // Sidebar.jsx
 import React from 'react';
+import ProgressBar from 'progressbar.js';
 
 import './Sidebar.css';
 import { NavLink } from 'react-router-dom'
@@ -21,21 +22,25 @@ export default class Sidebar extends React.Component {
 				</a>
 				<pre ref="result"></pre>
 				<ul className="main-nav" role="nav">
-					<li className="disabled">
+					<div style={{textAlign: "center"}}>
+						<input type="file" ref="fileinput" id="folder_input" className="d-none" multiple={true} onChange={this.props.loadCSV} />
+						<a href="#" onClick={this.openFileBrowser} className="loadProject btn btn-dark">Load project</a>
+					</div>
+					<li className="">
 						<NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink>
 					</li>
 					<li className="">
-						<NavLink activeClassName="active" to="/capacity">Generation &amp; Storage</NavLink>
+						<NavLink activeClassName="active" to="/capacity">Capacity Map</NavLink>
 					</li>
-					<li className="disabled">
+					<li className="">
 						<NavLink activeClassName="active" to="/dispatch">Generation Dispatch</NavLink>
 					</li>
 					<li className="">
-						<NavLink activeClassName="active" to="/transmission">Transmission</NavLink>
+						<NavLink activeClassName="active" to="/transmission">Transmission Map</NavLink>
 					</li>
-					{/*<li>
-						<NavLink activeClassName="active" to="">&nbsp;  &nbsp; &nbsp; Dispatch</NavLink>
-					</li>*/}
+					<li className="">
+						<NavLink activeClassName="active" to="/installed-capacity">Installed Capacity Graph</NavLink>
+					</li>
 					<li className="disabled">
 						<NavLink activeClassName="active" to="/settings">Settings</NavLink>
 					</li>
@@ -43,12 +48,6 @@ export default class Sidebar extends React.Component {
 						<NavLink activeClassName="active" to="/help">Help</NavLink>
 					</li>
 				</ul>
-				<div className="row mt-5">
-					<div className="col-3 offset-3">
-						<input type="file" ref="fileinput" id="folder_input" className="d-none" multiple={true} onChange={this.props.loadCSV} />
-						<a href="#" onClick={this.openFileBrowser} className="loadProject btn btn-dark">Load project...</a>
-					</div>
-				</div>
 			</div>
 		);
 	}

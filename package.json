@@ -12,6 +12,7 @@
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.0.17",
+    "reactstrap": "^7.1.0",
     "recharts": "^1.0.0-beta.7",
     "request": "^2.87.0"
   },
@@ -24,5 +25,11 @@
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

@@ -10,6 +10,9 @@ h1, h2, h3, h4, h5, h6{
 h1{
 	font-weight: 300;
 }
+h2{
+	font-weight: 100;
+}
 p{
 	color: $text;
 }
@@ -27,7 +30,7 @@ li{
 }
 
 .MainContent{
-	overflow: hidden;
+	overflow: visible;
 	width: 83%;
 	margin-left: 17%;
 	height: 100vh;
@@ -50,7 +53,7 @@ h1.maintitle{
 .mapleaf {
 	.info {
 		padding: 6px 8px;
-		text-align: left;  
+		text-align: left;
 		font: 14px/16px Arial, Helvetica, sans-serif;
 		background: white;
 		background: rgba(255,255,255,0.8);
